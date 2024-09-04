@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoZinga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to CryptoZinga</h1>
+    <p>Upload a file with historical data to forecast cryptocurrency status.</p>
+
+    <!-- Centered File Upload Prompt with a Border -->
+    <div class="file-upload-container">
+        <input type="file" id="cryptoFile" accept=".csv">
+        <button onclick="forecast()">Upload and Forecast</button>
+    </div>
+
+    <p id="result"></p>
+
+    <!-- Button to Navigate to the Next Page -->
+    <button class="bottom-button" onclick="window.location.href='page2.html'">Next Page</button>
+
+    <script>
+        function forecast() {
+            let fileInput = document.getElementById('cryptoFile');
+            let file = fileInput.files[0];
+            
+            if (file) {
+                document.getElementById('result').innerText = `Processing ${file.name} and forecasting... (This is a demo)`;
+                setTimeout(() => {
+                    document.getElementById('result').innerText = `Forecast for ${file.name}: Prices are expected to rise by 5% next week (This is a demo)`;
+                }, 2000);
+            } else {
+                document.getElementById('result').innerText = 'No file selected.';
+            }
+        }
+    </script>
+</body>
+</html>
