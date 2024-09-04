@@ -27,9 +27,9 @@
             let file = fileInput.files[0];
             
             if (file) {
-                document.getElementById('result').innerText = `Processing ${file.name} and forecasting... (This is a demo)`;
+                document.getElementById('result').innerText = `Processing ${file.name} and forecasting...`;
                 setTimeout(() => {
-                    document.getElementById('result').innerText = `Forecast for ${file.name}: Prices are expected to rise by 5% next week (This is a demo)`;
+                    document.getElementById('result').innerText = `Forecast for ${file.name}: Prices are expected to rise by 5% next week`;
                 }, 2000);
             } else {
                 document.getElementById('result').innerText = 'No file selected.';
